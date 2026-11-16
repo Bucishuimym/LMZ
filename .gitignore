@@ -1,0 +1,127 @@
+# ============================================
+# LMZ — Qt6 / CMake / C++17 (.gitignore)
+# 目标：只提交源码、CMake 脚本和翻译源文件（LMZ_zh_CN.ts）
+# ============================================
+
+# ---------- 构建产物 ----------
+# Qt Creator 的影子构建目录（build/Desktop_Qt_6_12_0_MinGW_64_bit_Debug 等）
+/build/
+/build-*/
+/out/
+# CLion / Visual Studio / VS Code 的 CMake 构建目录
+cmake-build-*/
+/cmake-build-*/
+
+# CMake 生成物（万一有 in-source 构建）
+CMakeCache.txt
+CMakeCache.txt.prev
+CMakeFiles/
+CMakeScripts/
+CMakeUserPresets.json
+cmake_install.cmake
+install_manifest.txt
+Makefile
+*.cmake.stamp
+_CTest_test/
+Testing/
+compile_commands.json
+/CMakePresets.json.user
+
+# ---------- Qt 生成物 ----------
+# moc / rcc / uic / autogen（qt_standard_project_setup 会生成这些）
+*_autogen/
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.moc
+# lrelease 编译出来的翻译二进制（.ts 源文件要保留）
+*.qm
+.qm/
+# Qt Deploy / clangd 辅助目录
+.qt/
+.qtc_clangd/
+.lupdate/
+*_lupdate_project.cmake
+
+# ---------- IDE / 编辑器 ----------
+# Qt Creator
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+*.user
+*.autosave
+# CLion / IntelliJ IDEA
+.idea/
+*.iml
+# Visual Studio
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+# VS Code
+.vscode/
+# 其他
+.cache/
+.clangd/
+.clang-format.cache
+
+# ---------- 编译中间文件（MinGW / MSVC / Clang） ----------
+*.o
+*.obj
+*.lo
+*.slo
+*.gch
+*.pch
+*.d
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+
+# ---------- 可执行文件与库 ----------
+*.exe
+*.exe.manifest
+*.dll
+*.lib
+*.a
+*.la
+*.so
+*.so.*
+*.dylib
+
+# ---------- 调试 / 符号 / 日志 ----------
+*.pdb
+*.ilk
+*.idb
+*.exp
+*.map
+*.stackdump
+*.log
+*.trace
+core
+core.*
+*.dmp
+
+# ---------- 系统垃圾文件 ----------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# ---------- 本地临时 / 测试输出 ----------
+# 程序跑压缩测试时可能吐出的数据文件
+*.bin
+*.huff
+*.out
+/tmp/
+/temp/
+/scratch/
+
+# ---------- 例外：一定要提交的 ----------
+!CMakeLists.txt
+!CMakePresets.json
+!LMZ_zh_CN.ts
+!*.ui
+!*.qrc
