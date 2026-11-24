@@ -19,6 +19,7 @@ qt_add_executable(LMZ
     HuffmanTree.h
     LMZ.h
     bitwriteandreadr.h bitwriteandread.cpp
+    filewr.h filewr.cpp
 )
 
 qt_add_translations(
